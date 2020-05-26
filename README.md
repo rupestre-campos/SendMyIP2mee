@@ -4,7 +4,7 @@ In order to run do not use your account password.
 Enable two step verificarion on google account 
 and
 create a app password, use it instead of your real password.
-
+https://support.google.com/mail/answer/185833?hl=en
 
 
 Good for homeworking without a fixed ip.
