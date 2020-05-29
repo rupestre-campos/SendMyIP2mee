@@ -2,10 +2,14 @@ Send a email to yourself (or anybody) with your IP.
 
 In order to run do not use your account password.
 Enable two step verificarion on google account 
+
 and
+
 create a app password, use it instead of your real password.
 https://support.google.com/mail/answer/185833?hl=en
 
+also enable less secure apps in your account.
+https://support.google.com/accounts/answer/6010255?hl=en
 
 Good for homeworking without a fixed ip.
 
