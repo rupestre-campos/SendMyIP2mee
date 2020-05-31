@@ -2,7 +2,9 @@
 EMAIL=xxx@gmail.com
 DEST=xxx@gmail.com
 PW=xxx
-scriptPy=/home/xxx/SendMyIP2mee/s_email.py
+scriptPy=./s_email.py
+
+
 ###
 HOST=google.com
 
@@ -11,14 +13,19 @@ function check_online () {
 }
 foo=1
 IS_ONLINE=$(check_online)
-echo is online $IS_ONLINE
+
+if [ $IS_ONLINE -eq 1 ]; then
+    echo "online, sending ip"
+    python3 $scriptPy $EMAIL $PW $DEST
+fi
+
 while [ 1 ]; do
     CHECKS=0
     while [ $IS_ONLINE -eq 1 ]; do
-        sleep 600;
+        sleep 10;
         IS_ONLINE=$(check_online)
         if [ $IS_ONLINE -eq 0 ]; then
-            echo offline
+            echo "offline"
             break
         fi
     done
@@ -28,10 +35,10 @@ while [ 1 ]; do
         IS_ONLINE=$(check_online)
         CHECKS=$[CHECKS +1]
         if [ $IS_ONLINE -eq 1 ]; then
-            echo "online, checks $CHECKS" 
+            echo "online, checks: $CHECK, sending ip"
+            python3 $scriptPy $EMAIL $PW $DEST 
             break
         fi
     done;
-    python3 $scriptPy $EMAIL $PW $DEST
 done;
 
