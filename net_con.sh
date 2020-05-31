@@ -1,5 +1,6 @@
 #!/bin/bash
 EMAIL=xxx@gmail.com
+DEST=xxx@gmail.com
 PW=xxx
 scriptPy=/home/xxx/SendMyIP2mee/s_email.py
 ###
@@ -31,6 +32,6 @@ while [ 1 ]; do
             break
         fi
     done;
-    python3 $scriptPy $EMAIL $PW
+    python3 $scriptPy $EMAIL $PW $DEST
 done;
 

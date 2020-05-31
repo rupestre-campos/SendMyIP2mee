@@ -5,9 +5,10 @@ import socket
 import sys
 
 port = 465
-add = sys.argv[1] 
+addr = sys.argv[1] 
 #app pasword
 password = sys.argv[2] 
+addr2 = sys.argv[3]
 context = ssl.create_default_context()
 
 def get_ip():
@@ -22,7 +23,7 @@ def get_ip():
     return result
 
 with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
-  server.login(add, password)
+  server.login(addr, password)
   message = get_ip()
   print(message)
-  server.sendmail(add,add,message)
+  server.sendmail(addr,addr2,message)
