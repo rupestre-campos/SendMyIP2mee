@@ -1,5 +1,8 @@
 Send a email to yourself (or anybody) with your IP.
 
+To use it, update the .sh file with your stuff.
+
+
 In order to run do not use your account password.
 Enable two step verificarion on google account 
 
